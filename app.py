@@ -18,8 +18,7 @@ OPS = {
 }
 
 def calculate(expr: str):
-    """
-    Traite une expression arithmétique simple contenant un opérateur et deux opérandes.
+    """Traite une expression arithmétique simple contenant un opérateur et deux opérandes.
 
     Args:
         expr (str): Expression saisie par l'utilisateur.
@@ -66,8 +65,7 @@ def calculate(expr: str):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    """
-    Route principale de l'application.
+    """Route principale de l'application.
     Gère l'affichage de la page et le traitement du formulaire de calcul.
     """
     result = ""
