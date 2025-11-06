@@ -35,7 +35,7 @@ cd TP3---LOG3000
 
 ### 2️⃣ Installer les dépendances
 ```bash
-pip install -r requirements.txt
+pip install flask
 ```
 
 ### 3️⃣ Lancer le serveur Flask
