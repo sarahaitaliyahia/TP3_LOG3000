@@ -1,3 +1,4 @@
+import pytest
 from app import calculate
 
 """Tests pour la fonction calculate dans app.py."""
