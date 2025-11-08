@@ -52,4 +52,4 @@ def divide(a, b):
     Returns:
         le résultat : Résultat de la division entière a // b.
     """
-    return a // b
+    return a / b
