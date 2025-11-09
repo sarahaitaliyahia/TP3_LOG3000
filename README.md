@@ -1,4 +1,4 @@
-# TP3 — LOG3000 : Calculatrice Web avec Flask
+# TP3 - LOG3000 : Calculatrice Web avec Flask
 
 ## Objectif du projet
 Ce projet vise à développer une **application web de calculatrice** en utilisant le framework **Flask (Python)**.  
@@ -21,10 +21,10 @@ Avant d’exécuter le projet, assurez-vous d’avoir installé  :
 ### 1. Cloner le dépôt
 ```bash
 git clone https://github.com/Mahdi01X/TP3---LOG3000.git
-cd TP3---LOG3000
 ```
 
 ### 2. Installer les dépendances
+Ouvrez votre terminal à la racine du dossier `TP3---LOG3000` puis lancez la commande 
 ```bash
 pip install flask
 ```
