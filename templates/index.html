@@ -37,11 +37,20 @@
 </div>
 
 <script>
+   /**
+    * Ajoute un caractère à l'écran de la calculatrice.
+    * @param {string} value Valeur à concaténer à l'affichage courant.
+    * @returns {void}
+    */
    function appendToDisplay(value) {
       const display = document.getElementById('display');
       display.value += value;
    }
 
+   /**
+    * Réinitialise le champ d'affichage.
+    * @returns {void}
+    */
    function clearDisplay() {
       document.getElementById('display').value = '';
    }

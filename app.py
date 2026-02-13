@@ -1,3 +1,10 @@
+"""
+Application Flask de calculatrice simple.
+
+Ce module expose une interface web qui accepte une expression de la forme 
+"nombre opérateur nombre" et délègue l'opération au module operators.
+"""
+
 from flask import Flask, request, render_template
 from operators import add, subtract, multiply, divide
 
@@ -11,6 +18,14 @@ OPS = {
 }
 
 def calculate(expr: str):
+    """
+    Évalue une expression arithmétique binaire (avec 2 opérandes).
+
+    Argument: expr, expression de l'utilisateur.
+    Returns: Le résultat numérique retourné par l'opérateur sélectionné.
+    Raises: ValueError, si le format est invalide ou si les opérandes ne sont pas numériques.
+    """
+
     if not expr or not isinstance(expr, str):
         raise ValueError("empty expression")
 
@@ -19,6 +34,7 @@ def calculate(expr: str):
     op_pos = -1
     op_char = None
 
+    # On limite volontairement le parser à une seule opération binaire.
     for i, ch in enumerate(s):
         if ch in OPS:
             if op_pos != -1:
@@ -43,12 +59,19 @@ def calculate(expr: str):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    """"
+    Affiche la calculatrice et traite une soumission de calcul.
+
+    Returns: La page HTML avec le résultat calculé ou un message d'erreur.
+    """
+
     result = ""
     if request.method == 'POST':
         expression = request.form.get('display', '')
         try:
             result = calculate(expression)
         except Exception as e:
+            # On renvoie une erreur lisible côté UI plutôt qu'une trace serveur.
             result = f"Error: {e}"
     return render_template('index.html', result=result)
 
