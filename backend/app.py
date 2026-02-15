@@ -5,10 +5,24 @@ Ce module expose une interface web qui accepte une expression de la forme
 "nombre opérateur nombre" et délègue l'opération au module operators.
 """
 
-from flask import Flask, request, render_template
-from operators import add, subtract, multiply, divide
+from pathlib import Path
 
-app = Flask(__name__)
+from flask import Flask, request, render_template
+try:
+    # Cas importé comme package: from backend.app import app
+    from .operators import add, subtract, multiply, divide
+except ImportError:
+    # Cas exécuté directement: python backend/app.py
+    from operators import add, subtract, multiply, divide
+
+# Les ressources UI restent à la racine du projet même si le code Python
+# est regroupé dans le module backend.
+BASE_DIR = Path(__file__).resolve().parent.parent
+app = Flask(
+    __name__,
+    template_folder=str(BASE_DIR / "templates"),
+    static_folder=str(BASE_DIR / "static"),
+)
 
 OPS = {
     '+': add,
@@ -19,7 +33,7 @@ OPS = {
 
 def calculate(expr: str):
     """
-    Évalue une expression arithmétique binaire (avec 2 opérandes).
+    Évalue une expression arithmétique avec 2 opérandes.
 
     Argument: expr, expression de l'utilisateur.
     Returns: Le résultat numérique retourné par l'opérateur sélectionné.
@@ -34,7 +48,7 @@ def calculate(expr: str):
     op_pos = -1
     op_char = None
 
-    # On limite volontairement le parser à une seule opération binaire.
+    # On limite volontairement le parser à une opération à 1 seul opérateur.
     for i, ch in enumerate(s):
         if ch in OPS:
             if op_pos != -1:
