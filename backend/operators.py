@@ -38,4 +38,4 @@ def divide(a,b):
                b, diviseur.
     Returns: Le quotient entier de a // b.
     """
-    return a // b
+    return a / b
