@@ -57,25 +57,10 @@ Its goals are:
 The test module is located in the `tests/` folder and currently contains
 automated tests for core arithmetic behavior.
 
-Current scope:
-- subtraction behavior (`subtract`)
-- multiplication behavior (`multiply`)
-- division behavior (`divide`)
-
 Run all tests from the project root:
 ```bash
 source .venv/bin/activate
 python -m unittest discover -s tests -v
-```
-
-Run the operators test module only:
-```bash
-python -m unittest tests.test_operators -v
-```
-
-Run one specific test:
-```bash
-python -m unittest tests.test_operators.TestOperatorLogicBugs.test_subtract_operand_order -v
 ```
 
 As new tests are added later, keep using `unittest discover` so new files are
@@ -98,19 +83,13 @@ git checkout -b docs/main-readme
 ```
 
 ### 3. Develop and validate locally
-- Make atomic commits with a clear message.
+- Make commits with a clear message.
 - Verify that the application starts.
 - Run the relevant tests before opening a PR.
-- If you are fixing an issue, re-run the failing test first, then confirm it passes after your change.
 
 ### 4. Open a Pull Request
 - Push the branch to the remote repository.
 - Create a PR targeting `main`.
-- Clearly describe:
-  - the problem;
-  - the proposed solution;
-  - the validations performed.
-- Reference the issue in the PR (e.g., `Closes #12`).
 
 ### 5. Merge and close the issue
 - Merge only after review is approved and checks pass.
