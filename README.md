@@ -1,4 +1,5 @@
-# TP3 LOG3000 - Web Calculator
+# Web Calculator
+By : team #60
 
 ## Project Purpose and Scope
 This project is a web calculator application developed with Flask.
