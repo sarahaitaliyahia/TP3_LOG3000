@@ -1,17 +1,16 @@
 # Module tests
 
-## Raison d'être
-Ce module contient les tests de régression pour les 3 bogues logiques
-identifiés et suivis dans les issues GitHub.
+## Purpose
+This module contains automated tests for the calculator logic.
 
-## Ce que les tests couvrent
+## What the tests cover
 - `test_operators.py`:
-  - bug #1: ordre des opérandes de `subtract(a, b)`;
-  - bug #2: opérateur utilisé par `multiply(a, b)`;
-  - bug #3: type de division utilisée par `divide(a, b)`.
+  - subtraction behavior;
+  - multiplication behavior;
+  - division behavior.
 
-## Exécuter tous les tests
-À partir de la racine du projet:
+## Run all tests
+From the project root:
 
 ```bash
 source .venv/bin/activate

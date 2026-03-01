@@ -1,16 +1,16 @@
 # Module templates
 
-## Raison d'être
-Ce module contient les gabarits HTML rendus par Flask. Il définit la
-structure de l'interface web que voit l'utilisateur.
+## Purpose
+This module contains HTML templates rendered by Flask. It defines the
+structure of the web interface seen by the user.
 
-## Fichiers principaux et responsabilités
-- `index.html`: page unique de la calculatrice, il affiche le résultat renvoyé par
-  Flask et contient les fonctions JavaScript minimales pour alimenter l'écran
-  et effacer la saisie.
+## Main files and responsibilities
+- `index.html`: single calculator page, displays the result returned by
+  Flask and contains the minimal JavaScript functions to populate the display
+  and clear the input.
 
-## Dépendances et hypothèses
-- Dépend de Flask pour le rendu des variables/template tags `{{ url_for(...) }}` et `{{ result }}`.
-- Dépend de `static/style.css` pour l'apparence visuelle.
-- Le formulaire envoie la valeur de `display` en `POST` vers la route `/`.
-- L'utilisateur veut résoudre des expressions à un seul opérateur et 2 opérandes.
+## Dependencies and assumptions
+- Depends on Flask to render variables/template tags `{{ url_for(...) }}` and `{{ result }}`.
+- Depends on `static/style.css` for visual appearance.
+- The form sends the `display` value via `POST` to route `/`.
+- The user wants to solve expressions with one operator and 2 operands.

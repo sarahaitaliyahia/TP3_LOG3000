@@ -1,3 +1,4 @@
+/* App page layout */
 body {
    font-family: Arial, sans-serif;
    background-color: #f0f0f0;
@@ -8,6 +9,7 @@ body {
    margin: 0;
 }
 
+/* Calculator panel container */
 .calculator {
    width: 100%;
    max-width: 600px;
@@ -18,12 +20,14 @@ body {
    text-align: center;
 }
 
+/* App title */
 h1 {
    color: #fff;
    margin-bottom: 20px;
    font-size: 36px;
 }
 
+/* Calculator display input */
 #display {
    width: 100%;
    height: 80px;
@@ -37,12 +41,14 @@ h1 {
    color: #fff;
 }
 
+/* Keypad grid */
 .buttons {
    display: grid;
    grid-template-columns: repeat(4, 1fr);
    gap: 15px;
 }
 
+/* Base button style */
 .btn {
    width: 100%;
    padding: 30px;
@@ -55,22 +61,27 @@ h1 {
    transition: background-color 0.2s;
 }
 
+/* Default button hover */
 .btn:hover {
    background-color: #555;
 }
 
+/* Operator buttons (+, -, *, /, =) */
 .operator {
    background-color: #ff9500;
 }
 
+/* Operator button hover */
 .operator:hover {
    background-color: #e68a00;
 }
 
+/* Default button active press */
 .btn:active {
    background-color: #444;
 }
 
+/* Operator button active press */
 .operator:active {
    background-color: #cc7a00;
 }

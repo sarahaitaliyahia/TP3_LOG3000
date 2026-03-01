@@ -1,22 +1,22 @@
 """
-Application Flask de calculatrice simple.
+Simple Flask calculator application.
 
-Ce module expose une interface web qui accepte une expression de la forme 
-"nombre opérateur nombre" et délègue l'opération au module operators.
+This module exposes a web interface that accepts an expression in the form
+"number operator number" and delegates the operation to the operators module.
 """
 
 from pathlib import Path
 
 from flask import Flask, request, render_template
 try:
-    # Cas importé comme package: from backend.app import app
+    # Imported as a package: from backend.app import app
     from .operators import add, subtract, multiply, divide
 except ImportError:
-    # Cas exécuté directement: python backend/app.py
+    # Executed directly: python backend/app.py
     from operators import add, subtract, multiply, divide
 
-# Les ressources UI restent à la racine du projet même si le code Python
-# est regroupé dans le module backend.
+# UI resources remain at the project root even if Python code
+# is grouped in the backend module.
 BASE_DIR = Path(__file__).resolve().parent.parent
 app = Flask(
     __name__,
@@ -33,11 +33,11 @@ OPS = {
 
 def calculate(expr: str):
     """
-    Évalue une expression arithmétique avec 2 opérandes.
+    Evaluate an arithmetic expression with 2 operands.
 
-    Argument: expr, expression de l'utilisateur.
-    Returns: Le résultat numérique retourné par l'opérateur sélectionné.
-    Raises: ValueError, si le format est invalide ou si les opérandes ne sont pas numériques.
+    Argument: expr, user expression.
+    Returns: Numeric result returned by the selected operator.
+    Raises: ValueError, if format is invalid or operands are not numeric.
     """
 
     if not expr or not isinstance(expr, str):
@@ -48,7 +48,7 @@ def calculate(expr: str):
     op_pos = -1
     op_char = None
 
-    # On limite volontairement le parser à une opération à 1 seul opérateur.
+    # Parser intentionally supports only one binary operator.
     for i, ch in enumerate(s):
         if ch in OPS:
             if op_pos != -1:
@@ -73,10 +73,10 @@ def calculate(expr: str):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    """"
-    Affiche la calculatrice et traite une soumission de calcul.
+    """
+    Render the calculator and handle a submitted expression.
 
-    Returns: La page HTML avec le résultat calculé ou un message d'erreur.
+    Returns: HTML page with either computed result or an error message.
     """
 
     result = ""
@@ -85,7 +85,7 @@ def index():
         try:
             result = calculate(expression)
         except Exception as e:
-            # On renvoie une erreur lisible côté UI plutôt qu'une trace serveur.
+            # Return a UI-friendly error instead of exposing a server traceback.
             result = f"Error: {e}"
     return render_template('index.html', result=result)
 

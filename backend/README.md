@@ -1,16 +1,16 @@
 # Module backend
 
-## Raison d'être
-Ce module regroupe le code Python de l'application. Il centralise la logique
-serveur (Flask) et les opérations de calcul pour simplifier la navigation dans
-le projet.
+## Purpose
+This module groups the Python code of the application. It centralizes server
+logic (Flask) and calculation operations to simplify navigation in the
+project.
 
-## Fichiers principaux et responsabilités
-- `app.py`: point d'entrée de l'application Flask, validation de l'expression,
-  appel des opérations, rendu de `templates/index.html`.
-- `operators.py`: fonctions arithmétiques utilisées par `app.py`.
+## Main files and responsibilities
+- `app.py`: Flask application entry point, expression validation,
+  operation calls, and rendering of `templates/index.html`.
+- `operators.py`: arithmetic functions used by `app.py`.
 
-## Dépendances et hypothèses
-- Dépend de Flask pour le serveur HTTP et le rendu de templates.
-- Les dossiers `templates/` et `static/` doivent rester à la racine du projet.
-- L'évaluation supporte une expression binaire simple (un seul opérateur).
+## Dependencies and assumptions
+- Depends on Flask for the HTTP server and template rendering.
+- The `templates/` and `static/` folders must remain at the project root.
+- Evaluation supports a simple binary expression (a single operator).

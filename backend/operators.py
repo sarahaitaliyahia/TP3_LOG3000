@@ -1,41 +1,37 @@
 """
-Opérations arithmétiques utilisées par l'application Flask.
+Arithmetic operations used by the Flask application.
 """
 
 def add(a,b):
     """
-    Additionne deux valeurs numériques.
+    Add two numeric values.
 
-    Arguments: a, premier opérande.
-               b, deuxième opérande.
-    Returns: La somme de a et b.
+    Arguments: a (float), first operand, b (float), second operand.
+    Returns: float, sum of a and b.
     """
     return a + b
 
 def subtract(a,b):
-    """Soustrait a de b.
+    """Subtract b from a.
 
-    Arguments: a, valeur à soustraire.
-               b, valeur de départ.
-    Returns: Le résultat de b - a.
+    Arguments: a (float), first operand, b (float), second operand.
+    Returns: float, result of a - b.
     """
     return a - b
 
 def multiply(a,b):
-    """Applique l'opération de puissance de a par b.
+    """Multiply two numeric values.
 
-    Arguments: a, base.
-               b, exposant.
-    Returns: Le résultat de a ** b.
+    Arguments: a (float), first operand, b (float), second operand.
+    Returns: float, result of a * b.
     """
     return a * b
 
 def divide(a,b):
     """
-    Applique une division entière.
+    Apply real division.
 
-    Arguments: a, dividende.
-               b, diviseur.
-    Returns: Le quotient entier de a // b.
+    Arguments: a (float), dividend, b (float), divisor.
+    Returns: float, quotient of a / b.
     """
     return a / b
