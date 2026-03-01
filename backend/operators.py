@@ -19,7 +19,7 @@ def subtract(a,b):
                b, valeur de départ.
     Returns: Le résultat de b - a.
     """
-    return b - a
+    return a - b
 
 def multiply(a,b):
     """Applique l'opération de puissance de a par b.
