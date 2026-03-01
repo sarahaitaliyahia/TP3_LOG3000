@@ -1,7 +1,7 @@
 # Module tests
 
 ## Purpose
-This module contains automated tests for the calculator logic.
+This module contains automated tests that validate the calculator application's behavior.
 
 ## What the tests cover
 - `test_operators.py`:
