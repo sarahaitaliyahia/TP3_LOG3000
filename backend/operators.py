@@ -28,7 +28,7 @@ def multiply(a,b):
                b, exposant.
     Returns: Le résultat de a ** b.
     """
-    return a ** b
+    return a * b
 
 def divide(a,b):
     """
